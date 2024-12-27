@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChatImpl extends UnicastRemoteObject implements Chat {
-    private List<Chat> clients;
+    final List<Chat> clients;
 
     protected ChatImpl() throws RemoteException {
         clients = new ArrayList<>();
