@@ -24,6 +24,6 @@ bin/
 
 ### VS Code ###
 .vscode/
-.src/main/java/.env
+.env
 ### Mac OS ###
 .DS_Store
