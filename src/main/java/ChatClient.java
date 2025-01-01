@@ -36,8 +36,12 @@ public class ChatClient {
 
             Chat chatServer = (Chat) Naming.lookup("rmi://" + serverIp + ":5000/chat");
 
-            Chat client = new ChatImpl();
+            // Register client with the server
+            ChatClientImpl client = new ChatClientImpl();
             chatServer.registerClient(client);
+
+//            Chat client = new ChatImpl();
+//            chatServer.registerClient(client);
 
             System.out.println("Connected to chat server at IP: " + serverIp);
             System.out.println("Welcome to the chat. Type your messages below:");

@@ -14,6 +14,7 @@
 //}
 import io.github.cdimascio.dotenv.Dotenv;
 import java.rmi.Naming;
+import java.rmi.registry.LocateRegistry;
 
 public class ChatServer {
     public static void main(String[] args) {
@@ -21,6 +22,8 @@ public class ChatServer {
             // Load environment variables
             Dotenv dotenv = Dotenv.load();
             String serverIp = dotenv.get("SERVER_IP");
+
+//            LocateRegistry.createRegistry(5001);
 
             ChatImpl chatServer = new ChatImpl();
             Naming.rebind("rmi://" + serverIp + ":5000/chat", chatServer);
