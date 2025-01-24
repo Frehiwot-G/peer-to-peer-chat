@@ -26,7 +26,8 @@ public class ChatServer {
 //            LocateRegistry.createRegistry(5001);
 
             ChatImpl chatServer = new ChatImpl();
-            Naming.rebind("rmi://" + serverIp + ":5000/chat", chatServer);
+//            Naming.rebind("rmi://" + serverIp + ":5000/chat", chatServer);
+            Naming.rebind("rmi://192.168.77.37:5000/chat", chatServer);
             System.out.println("Chat server is running on IP: " + serverIp);
         } catch (Exception e) {
             System.err.println("Server exception: " + e.getMessage());

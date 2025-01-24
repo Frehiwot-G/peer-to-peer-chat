@@ -34,7 +34,8 @@ public class ChatClient {
             Dotenv dotenv = Dotenv.load();
             String serverIp = dotenv.get("SERVER_IP");
 
-            Chat chatServer = (Chat) Naming.lookup("rmi://" + serverIp + ":5000/chat");
+//            Chat chatServer = (Chat) Naming.lookup("rmi://" + serverIp + ":5000/chat");
+            Chat chatServer = (Chat) Naming.lookup("rmi://192.168.77.37:5000/chat");
 
             // Register client with the server
             ChatClientImpl client = new ChatClientImpl();
