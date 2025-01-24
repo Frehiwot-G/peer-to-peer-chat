@@ -7,5 +7,4 @@ public interface Chat extends Remote {
 //    void registerClient(Chat client) throws RemoteException;
     void registerClient(ChatClientInterface client) throws RemoteException;
 
-    void receiveMessage(String message, String sender) throws RemoteException;
 }
